@@ -4,7 +4,7 @@
 		{
 			"label": "build and run",
 			"type": "shell",
-			"command": "plug test",
+			"command": "mcplugin test",
 			"isBackground": true,
 			"problemMatcher": {
 				"owner": "custom",
