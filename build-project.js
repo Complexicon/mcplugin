@@ -54,8 +54,8 @@ module.exports = async function(cacheDirs) {
 	const javaOptions = require(resolve('.vscode/settings.json'));
 
 	const javaHome = javaOptions["java.configuration.runtimes"][0].path;
-	const compilerPath = join(javaHome, 'bin/javac');
-	const packagingToolPath = join(javaHome, 'bin/jar');
+	const compilerPath = join(javaHome, 'bin/javac') + (process.platform === 'win32' ? '.exe' : '');
+	const packagingToolPath = join(javaHome, 'bin/jar') + (process.platform === 'win32' ? '.exe' : '');
 
 	if(toBuild.length !== 0) {
 		const result = spawn(compilerPath, ['-encoding', 'UTF-8', '-cp', classPath.join(process.platform === 'win32' ? ';' : ':'), '-sourcepath', srcLoc, '-d', '.plug/classes', ...toBuild]);

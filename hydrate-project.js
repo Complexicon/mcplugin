@@ -123,7 +123,7 @@ module.exports = async function(cacheDirs) {
 	const semver = require('semver');
 
 	// get appropriate java executable for minecraft version
-	const javaExecutable = join(semver.lte(options.minecraftVersion, '1.16.5') ? jdk8 : jdk17, 'bin/java');
+	const javaExecutable = join(semver.lte(options.minecraftVersion, '1.16.5') ? jdk8 : jdk17, 'bin/java') + (process.platform === 'win32' ? '.exe' : '');
 
 	console.log('setting up local dev server...');
 

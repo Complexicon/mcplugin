@@ -26,7 +26,11 @@ module.exports = async function(cacheDirs) {
 	const javaOptions = require(resolve('.vscode/settings.json'));
 	const javaHome = javaOptions["java.configuration.runtimes"][0].path;
 
-	const server = spawn(join(javaHome, 'bin/java'), ['-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005', '-jar', serverJarPath, 'nogui'], { cwd: path.resolve('.plug/server') });
+	const server = spawn(
+		join(javaHome, 'bin/java' + (process.platform === 'win32' ? '.exe' : '')),
+		['-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005', '-jar', serverJarPath, 'nogui'],
+		{ cwd: path.resolve('.plug/server') }
+	);
 
 	server.stdout.pipe(process.stdout);
 	server.stderr.pipe(process.stdout);
