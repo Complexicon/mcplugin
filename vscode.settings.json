@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": ["src/main/java"],
+    "java.project.referencedLibraries": {
+        "include":[],
+        "sources": {}
+    },
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-",
+            "default": true,
+            "path": ""
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+name: ${NAME}
+main: ${GROUP}.${NAME}.Main
+api-version: ${MCVERSION}
+version: 1.0
+commands:
