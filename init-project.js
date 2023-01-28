@@ -11,7 +11,7 @@ module.exports = async function (cacheDirs) {
 
 	if (process.argv.length != 6) {
 		console.log('usage:');
-		console.log('plug init <version> <name> <groupID>');
+		console.log('mcplugin init <version> <name> <groupID>');
 		return;
 	}
 
